@@ -520,6 +520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   turnSpeed: 100
+  idle: {fileID: 7400000, guid: df787a42d52d64ff4b908f7a344d499e, type: 2}
 --- !u!1001 &1114396805
 PrefabInstance:
   m_ObjectHideFlags: 0

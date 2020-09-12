@@ -2,10 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class PlayerAnim
+{
+    public AnimationClip idle;
+    public AnimationClip runForward;
+    public AnimationClip runBackward;
+    public AnimationClip runLeft;
+    public AnimationClip runRight;
+}
+
 public class PlayerCtrl : MonoBehaviour
 {
     public float moveSpeed = 50.0f;
     public float turnSpeed = 100.0f;
+
+    public PlayerAnim playerAnim;
+
+    public AnimationClip idle;
 
     private Animation animation;
 
@@ -13,7 +27,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         animation = GetComponent<Animation>();
 
-        animation.Play("Idle");
+        animation.Play(idle.name);
     }
 
     void Update()
