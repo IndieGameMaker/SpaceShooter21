@@ -7,11 +7,13 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed = 50.0f;
     public float turnSpeed = 100.0f;
 
-    public Animation animation;
+    private Animation animation;
 
     void Start()
     {
         animation = GetComponent<Animation>();
+
+        animation.Play("Idle");
     }
 
     void Update()
