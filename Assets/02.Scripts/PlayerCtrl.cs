@@ -41,17 +41,8 @@ public class PlayerCtrl : MonoBehaviour
         //회전로직
         transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * r);
 
-        // transform.Translate( Vector3.forward * moveSpeed * Time.deltaTime * v ); //(방향 * 속도 * 변위)
-        // transform.Translate( Vector3.right * moveSpeed * Time.deltaTime * h );   //
-
-        /* 정규화 벡터(Normalized Vector), 단위 벡터(Unit Vector)
-            Vector3.forward  = new Vector3(0, 0, 1)
-            Vector3.up       = new Vector3(0, 1, 0)
-            Vector3.right    = new Vector3(1, 0, 0)
-
-            Vector3.zero     = new Vector3(0, 0, 0)
-            Vector3.one      = new Vector3(1, 1, 1)
-        */
+        //애니메이션 처리
+        PlayAnim(h, v);
     }
 
     void PlayAnim(float h, float v)
