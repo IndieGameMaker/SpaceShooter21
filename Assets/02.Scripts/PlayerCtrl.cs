@@ -15,8 +15,8 @@ public class PlayerCtrl : MonoBehaviour
         float v = Input.GetAxis("Vertical");   // -1.0f ~ 0.0f ~ 1.0f 
 
         //transform.position += new Vector3(0, 0, 0.1f * v);
-        transform.Translate( Vector3.forward * 0.1f * v ); //(방향 * 속도 * 변위)
-        transform.Translate( Vector3.right * 0.1f * h );
+        transform.Translate( Vector3.forward * 8.0f * Time.deltaTime * v ); //(방향 * 속도 * 변위)
+        transform.Translate( Vector3.right * 8.0f * Time.deltaTime * h );   //
 
         /* 정규화 벡터(Normalized Vector), 단위 벡터(Unit Vector)
             Vector3.forward  = new Vector3(0, 0, 1)
