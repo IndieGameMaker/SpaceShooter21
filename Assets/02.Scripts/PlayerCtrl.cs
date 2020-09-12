@@ -52,7 +52,18 @@ public class PlayerCtrl : MonoBehaviour
             Vector3.zero     = new Vector3(0, 0, 0)
             Vector3.one      = new Vector3(1, 1, 1)
         */
+    }
 
-        //Debug.Log("h=" + h + "v=" + v);
+    void PlayAnim(float h, float v)
+    {
+        //전진
+        if (v >= 0.1f)
+        {
+            animation.CrossFade(playerAnim.runForward.name, 0.3f);
+        }
+        else if (v <= -0.1f)
+        {
+            
+        }
     }
 }
