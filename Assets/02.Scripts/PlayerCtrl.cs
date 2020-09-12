@@ -10,6 +10,7 @@ public class PlayerAnim
     public AnimationClip runBackward;
     public AnimationClip runLeft;
     public AnimationClip runRight;
+    public AnimationClip[] die;
 }
 
 public class PlayerCtrl : MonoBehaviour
@@ -19,15 +20,13 @@ public class PlayerCtrl : MonoBehaviour
 
     public PlayerAnim playerAnim;
 
-    public AnimationClip idle;
-
     private Animation animation;
 
     void Start()
     {
         animation = GetComponent<Animation>();
 
-        animation.Play(idle.name);
+        animation.Play(playerAnim.idle.name);
     }
 
     void Update()
