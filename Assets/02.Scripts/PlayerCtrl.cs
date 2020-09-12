@@ -56,14 +56,13 @@ public class PlayerCtrl : MonoBehaviour
 
     void PlayAnim(float h, float v)
     {
-        //전진
-        if (v >= 0.1f)
+        if (v >= 0.1f) //전진
         {
             animation.CrossFade(playerAnim.runForward.name, 0.3f);
         }
-        else if (v <= -0.1f)
+        else if (v <= -0.1f) //후진
         {
-            
+            animation.CrossFade(playerAnim.runBackward.name, 0.3f);
         }
     }
 }
