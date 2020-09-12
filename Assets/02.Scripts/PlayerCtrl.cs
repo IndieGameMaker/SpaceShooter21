@@ -12,7 +12,8 @@ public class PlayerCtrl : MonoBehaviour
     void Update()
     {
         float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
-        Debug.Log("h="+h);    
+        Debug.Log("h=" + h + "v=" + v);
     }
 }
