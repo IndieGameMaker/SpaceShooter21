@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BarrelCtrl : MonoBehaviour
 {
+    public GameObject expEffect;
     private int hitCount = 0;
 
     void Start()
