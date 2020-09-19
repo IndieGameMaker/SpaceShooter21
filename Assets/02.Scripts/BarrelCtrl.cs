@@ -18,14 +18,15 @@ public class BarrelCtrl : MonoBehaviour
             hitCount += 1; //hitCount = hitCount + 1; // ++hitCount;
             if (hitCount == 3)
             {
-
+                ExpBarrel();
             }
         }
     }
 
     void ExpBarrel()
     {
-        
+        Rigidbody rb = this.gameObject.AddComponent<Rigidbody>();
+        rb.AddForce(Vector3.up * 1500.0f);
     }
 
 }
