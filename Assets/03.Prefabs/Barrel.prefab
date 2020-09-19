@@ -62,11 +62,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+  expSfx: {fileID: 8300000, guid: c59b70e4dec5147a487fd2b4d5acbfc2, type: 3}
   textures:
   - {fileID: 2800000, guid: e1f2b37b381e6d14a8a01ddd49a84a58, type: 3}
   - {fileID: 2800000, guid: 0aa4112bfd022aa47919f151ba79ddc1, type: 3}
   - {fileID: 2800000, guid: d38462a18d74e454aaf079b02bc753cd, type: 3}
-  _renderer: {fileID: 0}
 --- !u!114 &5193119096364369226
 MonoBehaviour:
   m_ObjectHideFlags: 0
