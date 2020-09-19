@@ -15,7 +15,7 @@ public class RemoveBullet : MonoBehaviour
             Vector3 normalVec = points[0].normal;
             
             GameObject obj = Instantiate(sparkEffect, points[0].point, Quaternion.LookRotation(normalVec));
-            Destroy(obj, 0.2f); //(삭제할 오브젝트, 지연시간)
+            Destroy(obj, 0.5f); //(삭제할 오브젝트, 지연시간)
             Destroy(coll.gameObject);
         }
     }
