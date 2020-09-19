@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RemoveBullet : MonoBehaviour
 {
+    
+
+
     //충돌했을 때 1회 호출
     void OnCollisionEnter(Collision coll)
     {
