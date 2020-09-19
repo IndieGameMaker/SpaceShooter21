@@ -26,6 +26,9 @@ public class BarrelCtrl : MonoBehaviour
 
     void ExpBarrel()
     {
+        GameObject obj = Instantiate(expEffect, transform.position, Quaternion.identity);
+        Destroy(obj, 3.0f);
+        
         Rigidbody rb = this.gameObject.AddComponent<Rigidbody>();
         rb.AddForce(Vector3.up * 1500.0f);
     }
