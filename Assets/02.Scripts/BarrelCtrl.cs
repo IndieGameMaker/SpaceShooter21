@@ -7,9 +7,12 @@ public class BarrelCtrl : MonoBehaviour
     public GameObject expEffect;
     private int hitCount = 0;
 
+    public Texture[] textures;
+    public MeshRenderer  _renderer;
+
     void Start()
     {
-        
+        _renderer = this.gameObject.GetComponentInChildren<MeshRenderer>();
     }
 
     void OnCollisionEnter(Collision coll)
