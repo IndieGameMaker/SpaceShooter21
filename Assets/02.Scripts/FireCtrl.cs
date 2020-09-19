@@ -10,9 +10,12 @@ public class FireCtrl : MonoBehaviour
     public AudioClip fireSfx;
     private new AudioSource audio;
 
+    public MeshRenderer muzzleFlash;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        muzzleFlash.enabled = false;
     }
 
     // Update is called once per frame
