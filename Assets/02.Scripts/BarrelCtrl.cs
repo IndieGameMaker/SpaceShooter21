@@ -5,14 +5,18 @@ using UnityEngine;
 public class BarrelCtrl : MonoBehaviour
 {
     public GameObject expEffect;
+    public AudioClip expSfx;
+
     private int hitCount = 0;
 
     public Texture[] textures;
-    public MeshRenderer  _renderer;
+    private MeshRenderer  _renderer;
+    private AudioSource _audio;
 
     void Start()
     {
         _renderer = this.gameObject.GetComponentInChildren<MeshRenderer>();
+        _audio    = GetComponent<AudioSource>();
 
         int idx = Random.Range(0, textures.Length); //0, 1, 2
         _renderer.material.mainTexture = textures[idx];
@@ -33,6 +37,8 @@ public class BarrelCtrl : MonoBehaviour
 
     void ExpBarrel()
     {
+        _audio.PlayOneShot(expSfx);
+
         GameObject obj = Instantiate(expEffect, transform.position, Quaternion.identity);
         Destroy(obj, 3.0f);
         
