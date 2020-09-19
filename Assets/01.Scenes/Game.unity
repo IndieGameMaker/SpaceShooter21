@@ -577,6 +577,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 893635467}
   m_Enabled: 1
+--- !u!114 &1015381307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015381304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29606cb5968894d9bbc868d01ade1c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePos: {fileID: 1377642833}
+  bulletPrefab: {fileID: 6244272241777179890, guid: e32a3527669c64197bc6ebe83b9b837f, type: 3}
 --- !u!1001 &1114396805
 PrefabInstance:
   m_ObjectHideFlags: 0
