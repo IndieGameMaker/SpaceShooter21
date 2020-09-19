@@ -13,6 +13,10 @@ public class BarrelCtrl : MonoBehaviour
     void Start()
     {
         _renderer = this.gameObject.GetComponentInChildren<MeshRenderer>();
+
+        int idx = Random.Range(0, textures.Length); //0, 1, 2
+        _renderer.material.mainTexture = textures[idx];
+
     }
 
     void OnCollisionEnter(Collision coll)
