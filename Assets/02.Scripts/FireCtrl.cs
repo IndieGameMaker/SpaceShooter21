@@ -31,7 +31,16 @@ public class FireCtrl : MonoBehaviour
     {
         Instantiate(bulletPrefab, firePos.position, firePos.rotation);
         audio.PlayOneShot(fireSfx);
-        // audio.clip = fireSfx;
-        // audio.Play();
+
+        StartCoroutine(ShowMuzzleFlash());
     }
+
+    //코루틴 함수 (Coroutine Funtion)
+    IEnumerator ShowMuzzleFlash()
+    {
+        muzzleFlash.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        muzzleFlash.enabled = false;
+    }
+
 }
