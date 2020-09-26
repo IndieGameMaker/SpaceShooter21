@@ -30,7 +30,7 @@ public class FireCtrl : MonoBehaviour
     void Fire()
     {
         Instantiate(bulletPrefab, firePos.position, firePos.rotation);
-        audio.PlayOneShot(fireSfx);
+        audio.PlayOneShot(fireSfx, 0.1f);
 
         StartCoroutine(ShowMuzzleFlash());
     }

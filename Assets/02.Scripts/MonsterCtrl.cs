@@ -34,6 +34,7 @@ public class MonsterCtrl : MonoBehaviour
 
     //Animator HashTable 미리 Hash 추출
     private int hashAttack;
+    private int hashHit;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,7 @@ public class MonsterCtrl : MonoBehaviour
         anim  = GetComponent<Animator>();
 
         hashAttack = Animator.StringToHash("IsAttack");
+        hashHit    = Animator.StringToHash("Hit");
 
         StartCoroutine(CheckMonsterState());
         StartCoroutine(MonsterAction());
