@@ -34,8 +34,12 @@ public class PlayerCtrl : MonoBehaviour
     public delegate void PlayerDieHandler(); //PlayerDieHandler --> 델리게이트 이름
     public static event PlayerDieHandler OnPlayerDie;
 
+    public GameManager gameManager;
+
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         animation = GetComponent<Animation>();
 
         animation.Play(playerAnim.idle.name);
@@ -100,7 +104,10 @@ public class PlayerCtrl : MonoBehaviour
 
     void PlayerDie()
     {
-        GameManager.isGameOver = true;
+        //GameManager.isGameOver = true;
+        //GameObject.Find("GameManager").GetComponent<GameManager>().isGameOver = true;
+        gameManager.isGameOver = true;
+
 
         //이벤트를 발생(Raise Events)
         OnPlayerDie();

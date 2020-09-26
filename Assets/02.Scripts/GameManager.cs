@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     //몬스터의 출현 간격(생성 간격)
     public float createTime = 3.0f;
     private WaitForSeconds ws;
-    public static bool isGameOver = false;
+    public bool isGameOver = false;
 
     void Start()
     {
