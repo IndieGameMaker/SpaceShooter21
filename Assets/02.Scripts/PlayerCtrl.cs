@@ -68,4 +68,14 @@ public class PlayerCtrl : MonoBehaviour
             animation.CrossFade(playerAnim.idle.name, 0.3f);
         }
     }
+
+    /*
+        OnCollisionEnter, ~Stay, ~Exit : Is Trigger 언체크 
+        OnTriggerEnter, ~Stay, ~Exit   : Is Trigger 체크 , 관통
+    */
+
+    void OnTriggerEnter(Collider coll)
+    {
+        Debug.Log(coll.gameObject.name);
+    }
 }
