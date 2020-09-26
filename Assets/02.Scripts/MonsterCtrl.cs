@@ -45,6 +45,9 @@ public class MonsterCtrl : MonoBehaviour
     {
         //이벤트의 연결
         PlayerCtrl.OnPlayerDie += this.YouWin;
+
+        StartCoroutine(CheckMonsterState());
+        StartCoroutine(MonsterAction());
     }
 
     void OnDisable()
@@ -53,8 +56,7 @@ public class MonsterCtrl : MonoBehaviour
         PlayerCtrl.OnPlayerDie -= this.YouWin;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         monsterTr = GetComponent<Transform>();
         GameObject playerObj = GameObject.FindGameObjectWithTag("PLAYER");
@@ -68,9 +70,6 @@ public class MonsterCtrl : MonoBehaviour
 
         hashAttack = Animator.StringToHash("IsAttack");
         hashHit    = Animator.StringToHash("Hit");
-
-        StartCoroutine(CheckMonsterState());
-        StartCoroutine(MonsterAction());
     }
 
     //몬스터의 상태를 체크하는 코루틴
@@ -152,6 +151,16 @@ public class MonsterCtrl : MonoBehaviour
         agent.isStopped = true;
         StopAllCoroutines();
         anim.SetTrigger(hashDie);
+
+        Invoke("ReturnPooling", 5.0f);
+    }
+
+    void ReturnPooling()
+    {
+        hp = 100.0f;
+        GetComponent<CapsuleCollider>().enabled = true;
+
+        this.gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider coll)
