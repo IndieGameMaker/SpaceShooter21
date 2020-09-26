@@ -9,7 +9,7 @@ public class BullerCtrl : MonoBehaviour
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>(); 
-        rb.AddRelativeForce(Vector3.forward * 1000.0f);   
+        rb.AddRelativeForce(Vector3.forward * 2000.0f);   
     }
 
 }
