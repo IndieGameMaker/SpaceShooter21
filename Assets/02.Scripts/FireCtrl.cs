@@ -38,6 +38,7 @@ public class FireCtrl : MonoBehaviour
             if (Physics.Raycast(firePos.position, firePos.forward, out hit, fireRange, 1<<8)) //(광선의 발사원점, 방향, 결괏값, 길이, 레이어마스크)
             {
                 hit.collider.gameObject.GetComponent<MonsterCtrl>().OnDamage();
+                //hit.collider.gameObject.GetComponent<BarrelCtrl>().OnDamage();
             }
         }
     }
