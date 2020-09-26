@@ -32,7 +32,10 @@ public class FireCtrl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))  //0: Left button  , 1: Right Button , 2: Middle
         {
             Fire();
-            if (Physics.Raycast(firePos.position, firePos.forward, out hit, fireRange)) //(광선의 발사원점, 방향, 결괏값, 길이)
+            /*
+                1<<8 = 2^8 = 256
+            */
+            if (Physics.Raycast(firePos.position, firePos.forward, out hit, fireRange, 1<<8)) //(광선의 발사원점, 방향, 결괏값, 길이, 레이어마스크)
             {
                 Debug.Log("Hit " + hit.collider.name);
             }
