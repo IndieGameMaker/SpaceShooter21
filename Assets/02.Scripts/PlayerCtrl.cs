@@ -76,6 +76,9 @@ public class PlayerCtrl : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        Debug.Log(coll.gameObject.name);
+        if (coll.CompareTag("PUNCH"))
+        {
+            
+        }
     }
 }
