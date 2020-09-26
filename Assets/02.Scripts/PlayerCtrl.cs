@@ -91,6 +91,13 @@ public class PlayerCtrl : MonoBehaviour
 
     void PlayerDie()
     {
-        Debug.Log("Player Die");
+        //Debug.Log("Player Die");
+        //모든 몬스터를 추출해서 배열에 저장
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+
+        foreach (var monster in monsters)
+        {
+            monster.SendMessage("YouWin", SendMessageOptions.DontRequireReceiver);
+        }
     }
 }

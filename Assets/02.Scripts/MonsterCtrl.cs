@@ -147,7 +147,7 @@ public class MonsterCtrl : MonoBehaviour
         Debug.Log("Monster Hit = " + coll.gameObject.name);
     }
 
-    public void PlayerDie()
+    public void YouWin()
     {
         StopAllCoroutines();
         agent.isStopped = true;
