@@ -113,4 +113,14 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
+
+    //충돌 콜백함수
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("BULLET"))
+        {
+            Destroy(coll.gameObject);
+            anim.SetTrigger(hashHit);//anim.SetTrigger("Hit");
+        }
+    }
 }
