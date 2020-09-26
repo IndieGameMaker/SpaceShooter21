@@ -12,6 +12,9 @@ public class FireCtrl : MonoBehaviour
 
     public MeshRenderer muzzleFlash;
 
+    //광선의 길이(사정거리)
+    public float fireRange = 10.0f;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -21,6 +24,8 @@ public class FireCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.DrawRay(firePos.position, firePos.forward * fireRange, Color.green);
+
         if (Input.GetMouseButtonDown(0))  //0: Left button  , 1: Right Button , 2: Middle
         {
             Fire();

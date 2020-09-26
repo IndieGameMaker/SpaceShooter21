@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> monsterPool = new List<GameObject>();
     //public GameObject[] monsterPool = new GameObject[20];
 
-
+        
     void Awake()
     {
         if (instance == null)
