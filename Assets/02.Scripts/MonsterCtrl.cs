@@ -35,6 +35,10 @@ public class MonsterCtrl : MonoBehaviour
     //Animator HashTable 미리 Hash 추출
     private int hashAttack;
     private int hashHit;
+    private int hashDie = Animator.StringToHash("Die");
+
+    //Monster Health
+    public float hp = 100.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -121,6 +125,17 @@ public class MonsterCtrl : MonoBehaviour
         {
             Destroy(coll.gameObject);
             anim.SetTrigger(hashHit);//anim.SetTrigger("Hit");
+
+            hp -= 20.0f;
+            if (hp <= 0.0f)
+            {
+                MonsterDie();
+            }
         }
+    }
+
+    void MonsterDie()
+    {
+        anim.SetTrigger(hashDie);
     }
 }
