@@ -24,6 +24,13 @@ public class MonsterCtrl : MonoBehaviour
     //몬스터의 상태를 저장하는 변수
     public STATE state = STATE.IDLE;
 
+    //몬스터의 사망여부
+    public bool isDie = false;
+    //공격사정거리
+    public float attackDist = 2.0f;
+    //추적사정거리
+    public float traceDist = 10.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +44,21 @@ public class MonsterCtrl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
-    void Update()
+    //몬스터의 상태를 체크하는 코루틴
+    IEnumerator CheckMonsterState()
     {
-        agent.SetDestination(playerTr.position);
+        while(!isDie)
+        {
+            //주인공과 몬스터간의 거리를 계산
+            float distance = Vector3.Distance(monsterTr.position, playerTr.position);
+
+
+
+            yield return new WaitForSeconds(0.3f);
+        }
     }
+
+    //몬스터의 행동을 처리하는 코루틴
+
+
 }
