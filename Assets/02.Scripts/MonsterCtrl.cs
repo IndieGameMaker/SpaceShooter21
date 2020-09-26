@@ -141,4 +141,9 @@ public class MonsterCtrl : MonoBehaviour
         StopAllCoroutines();
         anim.SetTrigger(hashDie);
     }
+
+    void OnTriggerEnter(Collider coll)
+    {
+        Debug.Log(coll.gameObject.name);
+    }
 }
