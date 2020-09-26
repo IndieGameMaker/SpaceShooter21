@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Sington Design Pattern 싱글톤(싱글턴)
+    public static GameManager instance = null;
+
     //몬스터가 출현할 위치정보
     public Transform[] points;
 
@@ -14,6 +17,21 @@ public class GameManager : MonoBehaviour
     public float createTime = 3.0f;
     private WaitForSeconds ws;
     public bool isGameOver = false;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+
+        //A Scene -> B Scene
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     void Start()
     {

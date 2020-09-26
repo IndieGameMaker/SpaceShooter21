@@ -106,7 +106,9 @@ public class PlayerCtrl : MonoBehaviour
     {
         //GameManager.isGameOver = true;
         //GameObject.Find("GameManager").GetComponent<GameManager>().isGameOver = true;
-        gameManager.isGameOver = true;
+        //gameManager.isGameOver = true;
+
+        GameManager.instance.isGameOver = true;
 
 
         //이벤트를 발생(Raise Events)
