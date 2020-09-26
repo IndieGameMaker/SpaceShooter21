@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterCtrl : MonoBehaviour
 {
+    [System.NonSerialized]
     public Transform monsterTr;
+    [HideInInspector]
     public Transform playerTr;
+
+    private NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +21,13 @@ public class MonsterCtrl : MonoBehaviour
         {
             playerTr = playerObj.GetComponent<Transform>();
         }
+
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        agent.SetDestination(playerTr.position);
     }
 }
