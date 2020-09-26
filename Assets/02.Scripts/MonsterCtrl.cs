@@ -144,6 +144,6 @@ public class MonsterCtrl : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        Debug.Log(coll.gameObject.name);
+        Debug.Log("Monster Hit = " + coll.gameObject.name);
     }
 }
