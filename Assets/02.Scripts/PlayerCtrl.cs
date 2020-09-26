@@ -22,6 +22,9 @@ public class PlayerCtrl : MonoBehaviour
 
     private Animation animation;
 
+    private float initHp = 100.0f;
+    private float currHp = 100.0f; //(currHp / initHp) 백분율 Health Bar 구현할 때 사용
+
     void Start()
     {
         animation = GetComponent<Animation>();
@@ -78,7 +81,16 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (coll.CompareTag("PUNCH"))
         {
-            
+            currHp -= 10.0f;
+            if (currHp <= 0.0f)
+            {
+                PlayerDie();
+            }
         }
+    }
+
+    void PlayerDie()
+    {
+        Debug.Log("Player Die");
     }
 }
