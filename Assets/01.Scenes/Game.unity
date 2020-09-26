@@ -452,8 +452,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: []
-  monsterPrefab: {fileID: 0}
+  monsterPrefab: {fileID: 7332652935105579181, guid: 7079ae071d65740e38315ad5167f07f3, type: 3}
   createTime: 3
+  isGameOver: 0
 --- !u!4 &295646767
 Transform:
   m_ObjectHideFlags: 0

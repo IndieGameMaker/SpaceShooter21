@@ -422,7 +422,7 @@ MonoBehaviour:
   state: 0
   isDie: 0
   attackDist: 2
-  traceDist: 10
+  traceDist: 50
   hp: 100
 --- !u!1 &7332652935105579241
 GameObject:

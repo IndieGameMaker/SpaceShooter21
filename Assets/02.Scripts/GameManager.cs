@@ -41,6 +41,16 @@ public class GameManager : MonoBehaviour
             GameObject monster = Instantiate<GameObject>(monsterPrefab);
             //위치와 회전값을 설정
             monster.transform.position = points[idx].position;
+
+            //벡터의 뺄셈 연산
+            /*
+                벡터 A , B
+                A - B   ==> B -> A 방향 벡터
+            */
+
+            Vector3 dir = points[0].position - points[idx].position;
+            Quaternion rot = Quaternion.LookRotation(dir);
+            monster.transform.rotation = rot;
         }
     }
 }
