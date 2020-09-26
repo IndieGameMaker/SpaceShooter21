@@ -42,6 +42,8 @@ public class MonsterCtrl : MonoBehaviour
         }
 
         agent = GetComponent<NavMeshAgent>();
+
+        StartCoroutine(CheckMonsterState());
     }
 
     //몬스터의 상태를 체크하는 코루틴
@@ -52,7 +54,18 @@ public class MonsterCtrl : MonoBehaviour
             //주인공과 몬스터간의 거리를 계산
             float distance = Vector3.Distance(monsterTr.position, playerTr.position);
 
-
+            if (distance <= attackDist)
+            {
+                state = STATE.ATTACK;
+            }
+            else if (distance <= traceDist) // 공격사정거리 < 몬스터위치 <= 추적사정거리 
+            {
+                state = STATE.TRACE;
+            }
+            else
+            {
+                state = STATE.IDLE;
+            }
 
             yield return new WaitForSeconds(0.3f);
         }
