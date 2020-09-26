@@ -20,6 +20,7 @@ public class MonsterCtrl : MonoBehaviour
     public Transform playerTr;
 
     private NavMeshAgent agent;
+    private Animator anim;
 
     //몬스터의 상태를 저장하는 변수
     public STATE state = STATE.IDLE;
@@ -42,8 +43,10 @@ public class MonsterCtrl : MonoBehaviour
         }
 
         agent = GetComponent<NavMeshAgent>();
+        anim  = GetComponent<Animator>();
 
         StartCoroutine(CheckMonsterState());
+        StartCoroutine(MonsterAction());
     }
 
     //몬스터의 상태를 체크하는 코루틴
@@ -79,9 +82,14 @@ public class MonsterCtrl : MonoBehaviour
             switch(state)
             {
                 case STATE.IDLE:
+                    anim.SetBool("IsTrace", false);
+                    agent.isStopped = true;
                     break;
 
                 case STATE.TRACE:
+                    anim.SetBool("IsTrace", true);
+                    agent.SetDestination(playerTr.position);
+                    agent.isStopped = false;
                     break;
 
                 case STATE.ATTACK:
