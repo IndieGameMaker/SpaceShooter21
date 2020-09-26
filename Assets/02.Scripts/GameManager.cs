@@ -18,6 +18,13 @@ public class GameManager : MonoBehaviour
     private WaitForSeconds ws;
     public bool isGameOver = false;
 
+    //오브젝트 풀링 갯수
+    public int maxPool = 20;    //몬스터의 생성 갯수(오브젝트 풀링에 추가할 갯수)
+    //오브젝트 풀링 변수
+    public List<GameObject> monsterPool = new List<GameObject>();
+    //public GameObject[] monsterPool = new GameObject[20];
+
+
     void Awake()
     {
         if (instance == null)
@@ -43,7 +50,22 @@ public class GameManager : MonoBehaviour
             points = spawnPointGroup.GetComponentsInChildren<Transform>();
         }  
 
-        StartCoroutine(this.CreateMonster());    
+        //StartCoroutine(this.CreateMonster());
+        CreatePool();    
+    }
+
+    void CreatePool()
+    {
+        for(int i=0; i<maxPool; i++)
+        {
+            //몬스터 생성
+            GameObject monster = Instantiate<GameObject>(monsterPrefab);
+            monster.name = "Monster_" + i.ToString("00"); //Monster_00, Monster_01, ....
+            monster.SetActive(true);
+
+            //오브젝트 풀에 추가
+            monsterPool.Add(monster);
+        }
     }
 
     //몬스터를 생성하는 함수
