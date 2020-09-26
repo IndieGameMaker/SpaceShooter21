@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
             //몬스터 생성
             GameObject monster = Instantiate<GameObject>(monsterPrefab);
             monster.name = "Monster_" + i.ToString("00"); //Monster_00, Monster_01, ....
-            monster.SetActive(true);
+            monster.SetActive(false);
 
             //오브젝트 풀에 추가
             monsterPool.Add(monster);
