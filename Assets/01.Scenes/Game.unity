@@ -455,6 +455,8 @@ MonoBehaviour:
   monsterPrefab: {fileID: 7332652935105579181, guid: 7079ae071d65740e38315ad5167f07f3, type: 3}
   createTime: 3
   isGameOver: 0
+  maxPool: 20
+  monsterPool: []
 --- !u!4 &295646767
 Transform:
   m_ObjectHideFlags: 0
@@ -528,7 +530,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302044124}
-  m_LocalRotation: {x: 0.1007414, y: 0.0000000042797113, z: -4.333487e-10, w: 0.9949127}
+  m_LocalRotation: {x: 0.1007414, y: -0.000000004279712, z: 4.3334877e-10, w: 0.9949127}
   m_LocalPosition: {x: 4.33, y: 2.58, z: -0.23000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1794,7 +1796,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.1007414, y: 0.0000000042797113, z: -4.333487e-10, w: 0.9949127}
+  m_LocalRotation: {x: 0.1007414, y: -0.000000004279712, z: 4.3334877e-10, w: 0.9949127}
   m_LocalPosition: {x: 4.33, y: 2.58, z: -0.23000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

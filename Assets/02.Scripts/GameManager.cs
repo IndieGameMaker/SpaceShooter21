@@ -50,8 +50,8 @@ public class GameManager : MonoBehaviour
             points = spawnPointGroup.GetComponentsInChildren<Transform>();
         }  
 
-        //StartCoroutine(this.CreateMonster());
         CreatePool();    
+        StartCoroutine(this.CreateMonster());
     }
 
     void CreatePool()
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //몬스터를 생성하는 함수
+    //몬스터를 호출하는 함수
     IEnumerator CreateMonster()
     {
         while(!isGameOver)
@@ -77,20 +77,32 @@ public class GameManager : MonoBehaviour
 
             //Points 배열의 첨자(Index)에 대한 단수발생
             int idx = Random.Range(1, points.Length); //1 ~ 25
+
+            //몬스터를 오브젝트 풀에서 추출
+            foreach(var _monster in monsterPool)
+            {
+                if (_monster.activeSelf == false)
+                {
+                    //위치와 회전값을 설정
+                    _monster.transform.position = points[idx].position;
+
+                    //벡터의 뺄셈 연산
+                    /*
+                        벡터 A , B
+                        A - B   ==> B -> A 방향 벡터
+                    */
+
+                    Vector3 dir = points[0].position - points[idx].position;
+                    Quaternion rot = Quaternion.LookRotation(dir);
+                    _monster.transform.rotation = rot;
+                }
+            }
+
+
+
             //몬스터 생성(Clone)
             GameObject monster = Instantiate<GameObject>(monsterPrefab);
-            //위치와 회전값을 설정
-            monster.transform.position = points[idx].position;
 
-            //벡터의 뺄셈 연산
-            /*
-                벡터 A , B
-                A - B   ==> B -> A 방향 벡터
-            */
-
-            Vector3 dir = points[0].position - points[idx].position;
-            Quaternion rot = Quaternion.LookRotation(dir);
-            monster.transform.rotation = rot;
         }
     }
 }
