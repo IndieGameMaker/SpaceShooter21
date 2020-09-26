@@ -41,6 +41,18 @@ public class MonsterCtrl : MonoBehaviour
     //Monster Health
     public float hp = 100.0f;
 
+    void OnEnable()
+    {
+        //이벤트의 연결
+        PlayerCtrl.OnPlayerDie += this.YouWin;
+    }
+
+    void OnDisable()
+    {
+        //이벤트 연결정보 해제
+        PlayerCtrl.OnPlayerDie -= this.YouWin;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

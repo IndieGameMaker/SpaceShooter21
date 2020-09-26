@@ -25,6 +25,15 @@ public class PlayerCtrl : MonoBehaviour
     private float initHp = 100.0f;
     private float currHp = 100.0f; //(currHp / initHp) 백분율 Health Bar 구현할 때 사용
 
+    //이벤트 처리 - 델리게이트(대리자) - 변수(함수를 저장) - 함수포인터
+    //델리게이트 원형을 정의함 -> 저장할 수 있는 함수의 형태를 지정
+    
+    //public delegate (함수원형)
+    //public static event (델리게이트명) (이벤트명=변수명)
+
+    public delegate void PlayerDieHandler(); //PlayerDieHandler --> 델리게이트 이름
+    public static event PlayerDieHandler OnPlayerDie;
+
     void Start()
     {
         animation = GetComponent<Animation>();
@@ -92,14 +101,18 @@ public class PlayerCtrl : MonoBehaviour
     void PlayerDie()
     {
         GameManager.isGameOver = true;
+
+        //이벤트를 발생(Raise Events)
+        OnPlayerDie();
         
-        //Debug.Log("Player Die");
         //모든 몬스터를 추출해서 배열에 저장
+        /*
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
 
         foreach (var monster in monsters)
         {
             monster.SendMessage("YouWin", SendMessageOptions.DontRequireReceiver);
         }
+        */
     }
 }
