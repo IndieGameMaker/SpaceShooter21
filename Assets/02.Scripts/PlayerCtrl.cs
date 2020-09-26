@@ -91,6 +91,8 @@ public class PlayerCtrl : MonoBehaviour
 
     void PlayerDie()
     {
+        GameManager.isGameOver = true;
+        
         //Debug.Log("Player Die");
         //모든 몬스터를 추출해서 배열에 저장
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
