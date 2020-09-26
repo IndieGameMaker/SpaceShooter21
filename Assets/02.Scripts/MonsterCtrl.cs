@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum STATE
+{
+    IDLE,
+    TRACE,
+    ATTACK,
+    DIE
+}
+
+
 public class MonsterCtrl : MonoBehaviour
 {
     [System.NonSerialized]
@@ -11,6 +20,9 @@ public class MonsterCtrl : MonoBehaviour
     public Transform playerTr;
 
     private NavMeshAgent agent;
+
+    //몬스터의 상태를 저장하는 변수
+    public STATE state = STATE.IDLE;
 
     // Start is called before the first frame update
     void Start()
