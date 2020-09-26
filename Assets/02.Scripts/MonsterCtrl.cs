@@ -32,6 +32,9 @@ public class MonsterCtrl : MonoBehaviour
     //추적사정거리
     public float traceDist = 10.0f;
 
+    //Animator HashTable 미리 Hash 추출
+    private int hashAttack;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +47,8 @@ public class MonsterCtrl : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
         anim  = GetComponent<Animator>();
+
+        hashAttack = Animator.StringToHash("IsAttack");
 
         StartCoroutine(CheckMonsterState());
         StartCoroutine(MonsterAction());
@@ -87,12 +92,15 @@ public class MonsterCtrl : MonoBehaviour
                     break;
 
                 case STATE.TRACE:
+                    anim.SetBool(hashAttack, false);
                     anim.SetBool("IsTrace", true);
                     agent.SetDestination(playerTr.position);
                     agent.isStopped = false;
                     break;
 
                 case STATE.ATTACK:
+                    agent.isStopped = true;
+                    anim.SetBool(hashAttack, true);
                     break;
 
                 case STATE.DIE:
