@@ -36,6 +36,7 @@ public class MonsterCtrl : MonoBehaviour
     private int hashAttack;
     private int hashHit;
     private int hashDie = Animator.StringToHash("Die");
+    private int hashDance = Animator.StringToHash("PlayerDie");
 
     //Monster Health
     public float hp = 100.0f;
@@ -117,7 +118,6 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
-
     //충돌 콜백함수
     void OnCollisionEnter(Collision coll)
     {
@@ -145,5 +145,12 @@ public class MonsterCtrl : MonoBehaviour
     void OnTriggerEnter(Collider coll)
     {
         Debug.Log("Monster Hit = " + coll.gameObject.name);
+    }
+
+    public void PlayerDie()
+    {
+        StopAllCoroutines();
+        agent.isStopped = true;
+        anim.SetTrigger(hashDance);
     }
 }
