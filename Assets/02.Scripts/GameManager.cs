@@ -95,13 +95,13 @@ public class GameManager : MonoBehaviour
                     Vector3 dir = points[0].position - points[idx].position;
                     Quaternion rot = Quaternion.LookRotation(dir);
                     _monster.transform.rotation = rot;
+                    _monster.SetActive(true);
+                    break;
                 }
             }
 
-
-
             //몬스터 생성(Clone)
-            GameObject monster = Instantiate<GameObject>(monsterPrefab);
+            //GameObject monster = Instantiate<GameObject>(monsterPrefab);
 
         }
     }
