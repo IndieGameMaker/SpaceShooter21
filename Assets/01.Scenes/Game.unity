@@ -530,7 +530,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302044124}
-  m_LocalRotation: {x: 0.1007414, y: 0.0000000042797113, z: -4.333487e-10, w: 0.9949127}
+  m_LocalRotation: {x: 0.1007414, y: -0.000000004279712, z: 4.3334877e-10, w: 0.9949127}
   m_LocalPosition: {x: 4.33, y: 2.58, z: -0.23000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1796,7 +1796,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.1007414, y: 0.0000000042797113, z: -4.333487e-10, w: 0.9949127}
+  m_LocalRotation: {x: 0.1007414, y: -0.000000004279712, z: 4.3334877e-10, w: 0.9949127}
   m_LocalPosition: {x: 4.33, y: 2.58, z: -0.23000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1955,6 +1955,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6244272241777179890, guid: e32a3527669c64197bc6ebe83b9b837f, type: 3}
   fireSfx: {fileID: 8300000, guid: 3988c7241ff434c2a900f22726ee7a08, type: 3}
   muzzleFlash: {fileID: 2040291169}
+  fireRange: 10
 --- !u!4 &1015381308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400046, guid: f3cd25b3bf53c4adaaf087d862e435e6, type: 3}
