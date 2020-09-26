@@ -15,6 +15,9 @@ public class FireCtrl : MonoBehaviour
     //광선의 길이(사정거리)
     public float fireRange = 10.0f;
 
+    //Raycast에 충돌한 객체의 여러정보를 리턴받은 변수
+    private RaycastHit hit;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -29,12 +32,16 @@ public class FireCtrl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))  //0: Left button  , 1: Right Button , 2: Middle
         {
             Fire();
+            if (Physics.Raycast(firePos.position, firePos.forward, out hit, fireRange)) //(광선의 발사원점, 방향, 결괏값, 길이)
+            {
+                Debug.Log("Hit " + hit.collider.name);
+            }
         }
     }
 
     void Fire()
     {
-        Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+        //Instantiate(bulletPrefab, firePos.position, firePos.rotation);
         audio.PlayOneShot(fireSfx, 0.1f);
 
         StartCoroutine(ShowMuzzleFlash());
