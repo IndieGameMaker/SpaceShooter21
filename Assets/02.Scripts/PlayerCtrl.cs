@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class PlayerAnim
@@ -19,6 +20,7 @@ public class PlayerCtrl : MonoBehaviour
     public float turnSpeed = 100.0f;
 
     public PlayerAnim playerAnim;
+    public Image hpBar;
 
     private Animation animation;
 
