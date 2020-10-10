@@ -315,7 +315,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302044124}
-  m_LocalRotation: {x: 0.1007414, y: -0.000000004279712, z: 4.3334877e-10, w: 0.9949127}
+  m_LocalRotation: {x: 0.1007414, y: 0.0000000042797113, z: -4.333487e-10, w: 0.9949127}
   m_LocalPosition: {x: 4.33, y: 2.58, z: -0.23000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -586,7 +586,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.1007414, y: -0.000000004279712, z: 4.3334877e-10, w: 0.9949127}
+  m_LocalRotation: {x: 0.1007414, y: 0.0000000042797113, z: -4.333487e-10, w: 0.9949127}
   m_LocalPosition: {x: 4.33, y: 2.58, z: -0.23000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -656,6 +656,7 @@ MonoBehaviour:
     - {fileID: 7400000, guid: 9a9ec1afc95db4f879e8594b1bfb9553, type: 2}
     - {fileID: 7400000, guid: cad0f37b2c6a247deb2de7f1252d7832, type: 2}
     - {fileID: 7400000, guid: be029c8123e37492e944bb0bf72c6d7e, type: 2}
+  hpBar: {fileID: 1793995528}
   gameManager: {fileID: 0}
 --- !u!205 &1015381306
 LODGroup:
@@ -1317,7 +1318,7 @@ Camera:
   m_GameObject: {fileID: 2006779362}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

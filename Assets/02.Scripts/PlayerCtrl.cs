@@ -97,6 +97,9 @@ public class PlayerCtrl : MonoBehaviour
         if (coll.CompareTag("PUNCH"))
         {
             currHp -= 10.0f;
+
+            hpBar.fillAmount = currHp / initHp;
+
             if (currHp <= 0.0f)
             {
                 PlayerDie();

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
     //오브젝트 풀링 변수
     public List<GameObject> monsterPool = new List<GameObject>();
     //public GameObject[] monsterPool = new GameObject[20];
+
+    public Text scoreText;
 
         
     void Awake()
