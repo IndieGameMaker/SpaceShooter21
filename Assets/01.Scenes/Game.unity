@@ -242,6 +242,7 @@ MonoBehaviour:
   isGameOver: 0
   maxPool: 20
   monsterPool: []
+  scoreText: {fileID: 236676371}
 --- !u!4 &295646767
 Transform:
   m_ObjectHideFlags: 0

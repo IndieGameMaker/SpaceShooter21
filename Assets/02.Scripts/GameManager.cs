@@ -108,4 +108,12 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
+    public int totScore = 0;
+
+    public void IncreseScore(int score)
+    {
+        totScore += score;
+        scoreText.text = "SCORE : <color=#ff0000>" + totScore.ToString("00000") + "</color>";
+    }
 }
