@@ -151,6 +151,8 @@ public class MonsterCtrl : MonoBehaviour
 
     void MonsterDie()
     {
+        GameManager.instance.IncreseScore(10);
+
         GetComponent<CapsuleCollider>().enabled = false;
         agent.isStopped = true;
         StopAllCoroutines();
