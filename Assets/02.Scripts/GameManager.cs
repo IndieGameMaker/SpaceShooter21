@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         // }
 
         totScore = PlayerPrefs.GetInt("SCORE", 0);
+        IncreseScore(0);
 
         ws = new WaitForSeconds(createTime);
 
