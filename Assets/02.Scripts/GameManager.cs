@@ -45,6 +45,17 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        // if (PlayerPrefs.HasKey("SCORE"))
+        // {
+        //     totScore = PlayerPrefs.GetInt("SCORE");
+        // }
+        // else
+        // {
+        //     totScore = 0;
+        // }
+
+        totScore = PlayerPrefs.GetInt("SCORE", 0);
+
         ws = new WaitForSeconds(createTime);
 
         GameObject spawnPointGroup = GameObject.Find("SpawnPointGroup");  
@@ -114,6 +125,7 @@ public class GameManager : MonoBehaviour
     public void IncreseScore(int score)
     {
         totScore += score;
+        PlayerPrefs.SetInt("SCORE", totScore);
         scoreText.text = "SCORE : <color=#ff0000>" + totScore.ToString("00000") + "</color>";
     }
 }
